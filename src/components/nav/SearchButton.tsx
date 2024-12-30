@@ -2,11 +2,10 @@
 
 import { useState } from "react";
 import { BiSearch } from "react-icons/bi";
-import { CgClose } from "react-icons/cg";
 import { MdClose } from "react-icons/md";
 
 export default function SearchButton() {
-    let [fixedSearchBarDisplay, setFixedSearchBarDisplay] = useState<string>('hidden')
+    const [fixedSearchBarDisplay, setFixedSearchBarDisplay] = useState<string>('hidden')
     return (
         <>
             <div className="hidden md:flex" hidden></div>
