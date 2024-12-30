@@ -3,7 +3,7 @@ import CategoryList from "./CategoryList";
 import Hotline from "./Hotline";
 import Notice from "./Notice";
 import SearchButton from "./SearchButton";
-// import SideBar from "./Sidebar";
+import SideBar from "./Sidebar";
 
 export default function Navbar() {
     return (
@@ -11,11 +11,11 @@ export default function Navbar() {
             <Notice />
             <div className="w-[100vw] px-2 border-b-2 border-base-theme sm:shadow md:shadow-none">
                 <div className="w-full md:w-1/2 mx-auto py-2 flex flex-row items-center relative">
-                    {/* <div className="block mx-3 md:hidden">
+                    <div className="block mx-3 md:hidden">
                         <SideBar/>
-                    </div> */}
+                    </div>
                     <a href="/">
-                        <img src="https://ajkerhaatbazar.com/uploads/info/logo.png?c=1" className="h-[50px]" alt="" />
+                        <img src="/logo.png" className="h-[36px]" alt="" />
                     </a>
                     <form className="hidden md:flex h-[100%] justify-center flex-grow items-center flex-row ms-auto relative px-5">
                         <input className="border-2 text-lg w-1/2 border-base-theme h-[40px] mx-0 focus:outline-none focus:border-base-theme" type="text" name="" id="" required />
