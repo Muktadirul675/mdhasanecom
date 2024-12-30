@@ -1,5 +1,5 @@
 
-let categories: string[] = ['Exclusive Mobile Phone', 'Kids Product', 'Health Care', 'Mobile Phone']
+const categories: string[] = ['Exclusive Mobile Phone', 'Kids Product', 'Health Care', 'Mobile Phone']
 
 function Category({ category }: { category: string }) {
     return (
