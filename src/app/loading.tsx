@@ -18,7 +18,7 @@ export default function LoadingPage(){
         "Curating your perfect shopping spree..."
     ]
 
-    let [quote, setQuote] = useState<string>(loadingQuotes[Math.floor(Math.random()*loadingQuotes.length)])
+    const [quote, setQuote] = useState<string>(loadingQuotes[Math.floor(Math.random()*loadingQuotes.length)])
 
     useEffect(()=>{
         setInterval(()=>{
