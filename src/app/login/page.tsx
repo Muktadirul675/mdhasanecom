@@ -12,7 +12,7 @@ export default function  LoginPage(){
         if(session.status === 'authenticated'){
             router.push('/')
         }
-    },[])
+    })
     return (
         <div className="flex p-5 items-center justify-center">
             <div>
