@@ -1,4 +1,4 @@
-export default ()=>{
+export default function AdminPage(){
     return(
         <>
         admin

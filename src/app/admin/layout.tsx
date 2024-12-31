@@ -1,6 +1,6 @@
 import { CgProductHunt } from "react-icons/cg"
 
-export default ({ children }: { children: React.ReactNode }) => {
+export default function AdminLayout({ children }: { children: React.ReactNode }){
     return (
         <div className="flex">
             <div className="w-fit relative">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import LoginButton from "../auth/LoginButton";
 import CartShow from "./CartShow";
 import CategoryList from "./CategoryList";
@@ -17,7 +18,7 @@ export default function Navbar() {
                         <SideBar/>
                     </div>
                     <Link href="/">
-                        <img src="/logo.png" className="h-[36px]" alt="" />
+                        <Image src="/logo.png" alt="Zilmil" height={65} width={100}/>
                     </Link>
                     <form className="hidden md:flex h-[100%] justify-center flex-grow items-center flex-row ms-auto relative px-5">
                         <input className="border-2 text-lg w-1/2 border-base-theme h-[40px] mx-0 focus:outline-none focus:border-base-theme" type="text" name="" id="" required />

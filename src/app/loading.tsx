@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import Crane from '../../public/crane.gif'
+import { useEffect, useState } from "react";
 
-export default () => {
+export default function LoadingPage(){
     const loadingQuotes : string[] = [
         "Finding the best deals for you...",
         "Hang tight, your perfect match is on the way!",
@@ -17,11 +18,19 @@ export default () => {
         "Curating your perfect shopping spree..."
     ]
 
+    let [quote, setQuote] = useState<string>(loadingQuotes[Math.floor(Math.random()*loadingQuotes.length)])
+
+    useEffect(()=>{
+        setInterval(()=>{
+            setQuote(loadingQuotes[Math.floor(Math.random()*loadingQuotes.length)])
+        },1500)
+    })
+
     return (
         <div className="w-[100vw] h-[100vh] flex justify-center items-center flex-col">
             <Image src={Crane} alt="Loading..." width={120} height={120} /> <br />
             <b>
-                {loadingQuotes[Math.floor(Math.random()*loadingQuotes.length)]}
+                {quote}
             </b>
         </div>
     )

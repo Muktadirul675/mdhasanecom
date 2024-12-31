@@ -5,7 +5,7 @@ import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-export default () => {
+export default function  LoginPage(){
     const session = useSession()
     const router = useRouter()
     useEffect(()=>{
@@ -22,7 +22,7 @@ export default () => {
                 </div>
                 <div onClick={()=>signIn('google',{
                     callbackUrl: '/profile'
-                })} className="flex flex-row cursor-pointer hover:border hover:border-yellow-300 items-center transition-all bg-slate-100 rounded p-3 my-2">
+                })} className="flex flex-row select-none cursor-pointer hover:border hover:border-yellow-300 items-center transition-all bg-slate-100 rounded p-3 my-2">
                     <Image src='/google.png' alt='Google' width={30} height={30} /> <div className="mx-2"></div> Login With Google
                 </div>
                 <div className="flex flex-row cursor-pointer hover:border hover:border-blue-300 items-center transition-all bg-slate-100 rounded p-3 my-2">

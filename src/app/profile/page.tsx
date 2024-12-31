@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { BiUser } from "react-icons/bi";
 import { MdEmail } from "react-icons/md";
 
-export default async () => {
+export default async function ProfilePage(){
     const session = await auth();
     if (session) {
         return (
