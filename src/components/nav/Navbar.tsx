@@ -18,7 +18,7 @@ export default function Navbar() {
                         <SideBar/>
                     </div>
                     <Link href="/">
-                        <Image src="/logo.png" alt="Zilmil" height={40} width={90} className="h-10"/>
+                        <Image src="/logo.png" alt="Zilmil" height={40} width={100} className="h-10"/>
                     </Link>
                     <form className="hidden md:flex h-[100%] justify-center flex-grow items-center flex-row ms-auto relative px-5">
                         <input className="border-2 text-lg w-1/2 border-base-theme h-[40px] mx-0 focus:outline-none focus:border-base-theme" type="text" name="" id="" required />

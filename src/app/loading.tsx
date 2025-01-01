@@ -29,7 +29,7 @@ export default function LoadingPage(){
     return (
         <div className="w-[100vw] h-[100vh] flex justify-center items-center flex-col">
             <Image src={Crane} alt="Loading..." width={120} height={120} /> <br />
-            <b>
+            <b className="max-w-[75vw]">
                 {quote}
             </b>
         </div>
