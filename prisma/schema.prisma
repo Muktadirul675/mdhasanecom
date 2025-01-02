@@ -14,8 +14,8 @@ model User {
   email         String?         @unique
   emailVerified DateTime?
   image         String?
-  is_admin Boolean @default(false)
-  is_staff Boolean @default(false)
+  is_admin      Boolean         @default(false)
+  is_staff      Boolean         @default(false)
   accounts      Account[]
   sessions      Session[]
   // Optional for WebAuthn support
@@ -36,49 +36,62 @@ model Profile {
 }
 
 model Product {
-  id   String @id @default(cuid())
-  name String  @unique
-  slug String @unique
-  stock Int
-  description String
-  price Int 
+  id               String     @id @default(cuid())
+  name             String     @unique
+  slug             String     @unique
+  stock            Int
+  description      String
+  price            Int
   discounted_price Int?
-  is_available Boolean @default(true)
-  categories Category[]
-  images Image[]
-  sizes Size[]
+  is_available     Boolean    @default(true)
+  categories       Category[]
+  images           Image[]
+  sizes            Size[]
+  Color            Color[]
+  created_at       DateTime   @default(now())
+  updated_at       DateTime   @updatedAt
+}
+
+model Category {
+  id         String    @id @default(cuid())
+  name       String
+  products   Product[]
+  created_at DateTime  @default(now())
+  updated_at DateTime  @updatedAt
+}
+
+model Image {
+  id         String   @id @default(cuid())
+  url        String
+  index      Int      @default(1)
+  productId  String
+  product    Product  @relation(fields: [productId], references: [id])
+  caption    String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 }
 
-model Category{
-  id String @id @default(cuid())
-  name String
-  products Product[]
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+model Size {
+  id           String   @id @default(cuid())
+  name         String
+  productId    String
+  product      Product  @relation(fields: [productId], references: [id])
+  stock        Int
+  is_available Boolean  @default(true)
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
 }
 
-model Image{
-  id String @id @default(cuid())
-  url String
-  index Int @default(1)
-  productId String
-  product Product @relation(fields: [productId], references: [id])
-  caption String?
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
-}
-
-model Size{
-  id String @id @default(cuid())
-  name String
-  productId String
-  product Product @relation(fields: [productId], references: [id])
-  stock Int
-  is_available Boolean @default(true)
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+model Color {
+  id           String   @id @default(cuid())
+  name         String
+  hex String
+  productId    String
+  product      Product  @relation(fields: [productId], references: [id])
+  stock        Int
+  is_available Boolean  @default(true)
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
 }
 
 // Not to touch

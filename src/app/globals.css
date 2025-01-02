@@ -31,4 +31,31 @@
   .btn{
     @apply bg-red-500 px-2 py-1 text-white rounded-md
   }
+  .alert-error{
+    @apply px-2.5 py-2 border rounded border-red-600 bg-red-300 text-white 
+  }
+}
+
+.tiptap{
+  @apply border px-2 py-1.5 rounded-md focus:border-blue-400 focus:outline-none h-24
+}
+
+.editor-controls .active{
+  @apply bg-red-200
+}
+
+.editor-controls > div:first-child{
+  @apply rounded-tl-none rounded-bl
+}
+
+.editor-controls > div:last-child{
+  @apply rounded-tr-none rounded-br
+}
+
+.tiptap ul{
+  @apply list-disc ps-4
+}
+
+.tiptap ol{
+  @apply list-decimal ps-4
 }
