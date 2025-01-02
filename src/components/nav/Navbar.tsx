@@ -12,7 +12,7 @@ export default function Navbar() {
     return (
         <>
             <Notice />
-            <div className="sticky top-0 left-0 w-[100vw] px-2 border-b-2 border-base-theme sm:shadow md:shadow-none">
+            <div className="sticky top-0 left-0 w-[100vw] px-2 border-b-2 border-base-theme sm:shadow md:shadow-none z-20 bg-white">
                 <div className="w-full md:w-1/2 mx-auto py-2 flex flex-row items-center relative">
                     <div className="block mx-3 md:hidden">
                         <SideBar/>

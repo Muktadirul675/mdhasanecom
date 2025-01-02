@@ -23,3 +23,12 @@
     height: 50px;
   }
 }
+
+@layer components{
+  .form-input{
+    @apply border px-2 py-1.5 rounded-md focus:border-blue-400 focus:outline-none
+  }
+  .btn{
+    @apply bg-red-500 px-2 py-1 text-white rounded-md
+  }
+}
