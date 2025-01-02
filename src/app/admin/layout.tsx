@@ -6,13 +6,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     return (
         <div className="flex items-start">
             <div className="sticky top-[55px] h-dvh bg-red-500 flex flex-col text-white p-1 md:p-3">
-                <Link href='/' className="mb-2 flex items-center p-3 rounded hover:bg-red-600 transition-all">
+                <Link href='/admin' className="mb-2 flex items-center p-3 rounded hover:bg-red-600 transition-all">
                     <BiHome />
                     <div className="hidden mx-2 md:block">
-                        Home
+                        Dashboard
                     </div>
                 </Link>
-                <Link href='/' className="mb-2 flex items-center p-3 rounded hover:bg-red-600 transition-all">
+                <Link href='/admin' className="mb-2 flex items-center p-3 rounded hover:bg-red-600 transition-all">
                     <FaUserGroup />
                     <div className="hidden mx-2 md:block">
                         Users
