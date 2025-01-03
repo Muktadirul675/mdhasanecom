@@ -88,7 +88,7 @@ export default function AddProductPage() {
         })
 
         const data = await res.json()
-        if(data['hello'] === 'world'){
+        if (data['hello'] === 'world') {
             router.push('/admin/products')
         }
         setAdding(false)
@@ -149,10 +149,6 @@ export default function AddProductPage() {
                         <div className="mx-1"></div>
                         Upload Image
                     </label>
-                    <ErrorList errorInstance={errors}/>
-                    <div className="my-1">
-                        {adding ? <Spinner/> : <button className="btn" onClick={() => addProduct()}>Submit</button>}
-                    </div>
                 </div>
                 <div className="w-full md:w-1/2 p-1">
                     <div>
@@ -205,6 +201,10 @@ export default function AddProductPage() {
                         </div>}
                         <button onClick={() => sizes.addSize()} className="btn my-1">Add Size</button>
                     </div>
+                </div>
+                <ErrorList errorInstance={errors} />
+                <div className="my-1">
+                    {adding ? <Spinner /> : <button className="btn" onClick={() => addProduct()}>Submit</button>}
                 </div>
             </div>
         </>
