@@ -3,7 +3,7 @@
 import { useState } from "react"
 import useError from "./error"
 
-interface Size{
+export interface Size{
     name: string,
     stocks: number
 }

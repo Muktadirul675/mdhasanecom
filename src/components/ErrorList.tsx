@@ -14,7 +14,7 @@ export default function ErrorList({ errorInstance }:{ errorInstance : {
     return <>
         {errorInstance.errors.map((error) =>
             <div key={error.id} className="alert-error flex items-center transition-all my-1">
-                <BiError className="text-lg text-red-500" /> <div className="mx-1"></div>
+                <BiError className="text-2xl text-red-500" /> <div className="mx-1"></div>
                 {error.error}
                 <CgClose className="text-lg ms-auto cursor-pointer" onClick={() => errorInstance.removeError({ id: error.id })} />
             </div>

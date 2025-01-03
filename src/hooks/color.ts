@@ -3,7 +3,7 @@
 import { useState } from "react"
 import useError from "./error"
 
-interface Color {
+export interface Color {
     name: string,
     hex: string,
     stocks: number

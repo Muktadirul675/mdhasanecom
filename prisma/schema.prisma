@@ -39,7 +39,7 @@ model Product {
   id               String     @id @default(cuid())
   name             String     @unique
   slug             String     @unique
-  stock            Int
+  stocks           Int
   description      String
   price            Int
   discounted_price Int?
@@ -47,7 +47,7 @@ model Product {
   categories       Category[]
   images           Image[]
   sizes            Size[]
-  Color            Color[]
+  colors            Color[]
   created_at       DateTime   @default(now())
   updated_at       DateTime   @updatedAt
 }
@@ -76,7 +76,7 @@ model Size {
   name         String
   productId    String
   product      Product  @relation(fields: [productId], references: [id])
-  stock        Int
+  stocks       Int
   is_available Boolean  @default(true)
   created_at   DateTime @default(now())
   updated_at   DateTime @updatedAt
@@ -85,10 +85,10 @@ model Size {
 model Color {
   id           String   @id @default(cuid())
   name         String
-  hex String
+  hex          String
   productId    String
   product      Product  @relation(fields: [productId], references: [id])
-  stock        Int
+  stocks       Int
   is_available Boolean  @default(true)
   created_at   DateTime @default(now())
   updated_at   DateTime @updatedAt

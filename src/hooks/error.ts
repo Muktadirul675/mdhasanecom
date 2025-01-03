@@ -3,14 +3,19 @@
 import { Error } from "@/types"
 import { useState } from "react"
 
+interface DecayingError extends Error{
+    time: number
+}
+
+let lastErrorId = 1;
+
 export default function useError() {
-    const [errors, setErrors] = useState<Error[]>([])
-    const [errorLastId, setErrorLastId] = useState<number>(0)
+    const [errors, setErrors] = useState<DecayingError[]>([])
 
     function addError({ error }: { error: string }) {
         setErrors((prev) => {
-            const newError = { error: error, id: errorLastId }
-            setErrorLastId((prev) => prev + 1)
+            const newError = { error: error, id: lastErrorId, time: 5}
+            lastErrorId += 1
             return [...prev, newError]
         })
     }
